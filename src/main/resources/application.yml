@@ -1,0 +1,34 @@
+spring:
+  profiles:
+    active: ${ACTIVE_PROFILE:dev}
+  datasource:
+    username: root
+    url: jdbc:mysql://localhost:3306/todolist
+    password: root
+  jpa:
+    generate-ddl: 'true'
+    hibernate:
+      ddl-auto: create
+    show-sql: 'true'
+  mail:
+    host: ${EMAIL_HOST}
+    port: ${EMAIL_PORT}
+    id: ${EMAIL_ID}
+    password: ${EMAIL_PASSWORD}
+    default-encoding: UTF-8
+    properties:
+      mail:
+        mime:
+          charset: UTF
+        smtp:
+          writetimeout: 10000
+          connectiontimeout: 10000
+          timeout: 10000
+          auth: true
+          starttls:
+            enable: true
+            requered: true
+    verify:
+      host: ${VERIFY_EMAIL_HOST}
+server:
+  port: '8448'
